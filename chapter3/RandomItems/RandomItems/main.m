@@ -16,13 +16,23 @@ int main(int argc, const char * argv[])
         
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
-        // Add items to array
-        for(int i = 0; i < 10; i++) {
-            BNRItem *item = [BNRItem randomItem];
-        ////            [items addObject:item];
-            items[i] = item;
-        }
+//        // Add items to array
+//        for(int i = 0; i < 10; i++) {
+//            BNRItem *item = [BNRItem randomItem];
+//            items[i] = item;
+//        }
+
+        BNRItem *backpack = [[BNRItem alloc] initWithItemName:@"Backpack"];
+        [items addObject:backpack];
+         
+        BNRItem *calculator = [[BNRItem alloc] initWithItemName:@"Calculator"];
+        [items addObject:calculator];
         
+        backpack.containedItem = calculator;
+        
+        backpack = nil;
+        calculator = nil;     
+         
         // Print items in array
         for(NSString *item in items) {
             NSLog(@"%@", item);
