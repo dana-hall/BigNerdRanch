@@ -18,17 +18,18 @@
     // Override point for customization after application launch.
     
     // first frame red square
-    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+//    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+    CGRect firstFrame = self.window.bounds;
     BNRHypnosisView *firstView = [[BNRHypnosisView alloc] initWithFrame:firstFrame];
-    firstView.backgroundColor = [UIColor redColor];
+//    firstView.backgroundColor = [UIColor redColor];
     [self.window addSubview:firstView];
     
-    // second frame blue square
-    CGRect secondFrame = CGRectMake(20, 30, 50, 50);
-    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:secondFrame];
-    secondView.backgroundColor = [UIColor blueColor];
-//    [self.window addSubview:secondView];
-    [firstView addSubview:secondView];
+//    // second frame blue square
+//    CGRect secondFrame = CGRectMake(20, 30, 50, 50);
+//    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:secondFrame];
+//    secondView.backgroundColor = [UIColor blueColor];
+////    [self.window addSubview:secondView];
+//    [firstView addSubview:secondView];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
