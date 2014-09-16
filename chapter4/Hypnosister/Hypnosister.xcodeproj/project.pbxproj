@@ -20,6 +20,9 @@
 		D625524819C65C0C002E3CA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D625524619C65C0C002E3CA1 /* InfoPlist.strings */; };
 		D625524A19C65C0C002E3CA1 /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D625524919C65C0C002E3CA1 /* HypnosisterTests.m */; };
 		D625525519C65C7B002E3CA1 /* BNRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = D625525419C65C7B002E3CA1 /* BNRHypnosisView.m */; };
+		D6F702BE19C7912A002FEFC1 /* clan_hall_badge.gif in Resources */ = {isa = PBXBuildFile; fileRef = D6F702BD19C7912A002FEFC1 /* clan_hall_badge.gif */; };
+		D6F702C119C79E4C002FEFC1 /* BNRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F702C019C79E4C002FEFC1 /* BNRImage.m */; };
+		D6F702C619C7A268002FEFC1 /* clan_hall_badge.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F702C519C7A268002FEFC1 /* clan_hall_badge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		D625524919C65C0C002E3CA1 /* HypnosisterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisterTests.m; sourceTree = "<group>"; };
 		D625525319C65C7B002E3CA1 /* BNRHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRHypnosisView.h; sourceTree = "<group>"; };
 		D625525419C65C7B002E3CA1 /* BNRHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRHypnosisView.m; sourceTree = "<group>"; };
+		D6F702BD19C7912A002FEFC1 /* clan_hall_badge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = clan_hall_badge.gif; path = Hypnosister/clan_hall_badge.gif; sourceTree = "<group>"; };
+		D6F702BF19C79E4C002FEFC1 /* BNRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImage.h; sourceTree = "<group>"; };
+		D6F702C019C79E4C002FEFC1 /* BNRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImage.m; sourceTree = "<group>"; };
+		D6F702C519C7A268002FEFC1 /* clan_hall_badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clan_hall_badge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +87,12 @@
 		D625521819C65C0C002E3CA1 = {
 			isa = PBXGroup;
 			children = (
+				D6F702C519C7A268002FEFC1 /* clan_hall_badge.png */,
 				D625525319C65C7B002E3CA1 /* BNRHypnosisView.h */,
+				D6F702BD19C7912A002FEFC1 /* clan_hall_badge.gif */,
 				D625525419C65C7B002E3CA1 /* BNRHypnosisView.m */,
+				D6F702BF19C79E4C002FEFC1 /* BNRImage.h */,
+				D6F702C019C79E4C002FEFC1 /* BNRImage.m */,
 				D625522A19C65C0C002E3CA1 /* Hypnosister */,
 				D625524319C65C0C002E3CA1 /* HypnosisterTests */,
 				D625522319C65C0C002E3CA1 /* Frameworks */,
@@ -227,6 +238,8 @@
 			files = (
 				D625522F19C65C0C002E3CA1 /* InfoPlist.strings in Resources */,
 				D625523719C65C0C002E3CA1 /* Images.xcassets in Resources */,
+				D6F702C619C7A268002FEFC1 /* clan_hall_badge.png in Resources */,
+				D6F702BE19C7912A002FEFC1 /* clan_hall_badge.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +260,7 @@
 			files = (
 				D625523119C65C0C002E3CA1 /* main.m in Sources */,
 				D625523519C65C0C002E3CA1 /* BNRAppDelegate.m in Sources */,
+				D6F702C119C79E4C002FEFC1 /* BNRImage.m in Sources */,
 				D625525519C65C7B002E3CA1 /* BNRHypnosisView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +458,7 @@
 				D625524F19C65C0C002E3CA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D625525019C65C0C002E3CA1 /* Build configuration list for PBXNativeTarget "HypnosisterTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +467,7 @@
 				D625525219C65C0C002E3CA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
