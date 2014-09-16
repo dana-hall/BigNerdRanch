@@ -7,7 +7,7 @@
 //
 
 #import "BNRHypnosisView.h"
-#import "BNRImage.h"
+//#import "BNRImage.h"
 
 @implementation BNRHypnosisView
 
@@ -85,16 +85,24 @@
     // Draw the line
     [path stroke];
     
-    UIImage *logoImage = [UIImage imageNamed:@"clan_hall_badge.png"];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+//    CGContextSetShadow(context, CGSizeMake(4,7), 3);
+    CGColorRef shadowColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.9].CGColor;
+    CGContextSetShadowWithColor(context, CGSizeMake(4,7), 3, shadowColor);
+    
+    UIImage *logoImage = [UIImage imageNamed:@"clan_hall_badge.gif"];
 //    [logoImage drawInRect:rect];
     
-    CGRect secondFrame = CGRectMake(30, 80, 250, 300);
-    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:secondFrame];
-    secondView.backgroundColor = [UIColor clearColor];
+    CGRect secondFrame = CGRectMake(35, 120, 250, 325);
+//    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:secondFrame];
+//    secondView.backgroundColor = [UIColor clearColor];
     //    [self.window addSubview:secondView];
 //    [firstView addSubview:secondView];
     [logoImage drawInRect:secondFrame];
 
+    CGContextRestoreGState(context);
+    
     // Scale the image
 //    UIImage *scaledImage = [logoImage scaleToSize:CGSizeMake(25.0f, 35.0f)];
 //    [scaledImage drawInRect:rect];
