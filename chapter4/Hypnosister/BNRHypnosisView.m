@@ -73,7 +73,6 @@
     CGContextSetShadowWithColor(context, CGSizeMake(4,7), 3, shadowColor);
     
     UIImage *logoImage = [UIImage imageNamed:@"clan_hall_badge.gif"];
-//    [logoImage drawInRect:rect];
     
     float imageWidth = 250.0;
     float imageHeight = 315.0;
@@ -125,12 +124,16 @@
     // Clip the drawing area to just the defined triangle
     [triangle addClip];
    
-    CGFloat locations[2] = {0.0, 1.0};
+//    CGFloat locations[2] = {0.0, 1.0};
+    CGFloat locations[4] = {0.0, 0.33, 0.66, 0.88};
     
     // The fourth and last parameters set the opaqueness/transparency of the colors
-    CGFloat components[8] = {0.0, 1.0, 0.0, 0.75, 1.0, 1.0, 0.0, 0.75};
+//    CGFloat components[8] = {0.0, 1.0, 0.0, 0.75, 1.0, 1.0, 0.0, 0.75};
+//    CGFloat components[12] = {0.0, 1.0, 0.0, 0.80, 1.0, 1.0, 0.0, 0.80, 1.0, 0.0, 0.0, 0.80};
+    CGFloat components[16] = {0.0, 1.0, 0.0, 0.75, 1.0, 1.0, 0.0, 0.75, 1.0, 0.0, 0.0, 0.75, 0.0, 0.0, 1.0, 0.75};
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 2);
+//    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 2);
+    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 4);
 
     CGPoint startPoint = CGPointMake(0.0, 75.0);
     CGPoint endPoint = CGPointMake(0.0, bounds.size.height - 75.0);
@@ -139,7 +142,71 @@
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
     CGContextRestoreGState(context);
-     
+
+    //
+    // Hexagon
+    //
+    context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    
+    // Create a triangle path
+    UIBezierPath *hexagon = [[UIBezierPath alloc] init];
+
+    // Establish the hexagon points
+    CGPoint hex1;
+    hex1.x = 100;
+    hex1.y = 100;
+    
+    CGPoint hex2;
+    hex2.x = 150;
+    hex2.y = 130;
+    
+    CGPoint hex3;
+    hex3.x = 150;
+    hex3.y = 180;
+    
+    CGPoint hex4;
+    hex4.x = 100;
+    hex4.y = 210;
+    
+    CGPoint hex5;
+    hex5.x = 50;
+    hex5.y = 180;
+    
+    CGPoint hex6;
+    hex6.x = 50;
+    hex6.y = 130;
+    
+    // Create the hexagon
+    [hexagon moveToPoint:hex1];
+    [hexagon addLineToPoint:hex2];
+    [hexagon addLineToPoint:hex3];
+    [hexagon addLineToPoint:hex4];
+    [hexagon addLineToPoint:hex5];
+    [hexagon addLineToPoint:hex6];
+    
+    [hexagon closePath];
+    
+    // Clip the drawing area to just the defined triangle
+    [hexagon addClip];
+    
+    //    CGFloat locations[2] = {0.0, 1.0};
+    CGFloat locationsHex[4] = {0.10, 0.20, 0.30, 0.40};
+    
+    // The fourth and last parameters set the opaqueness/transparency of the colors
+    CGFloat componentsHex[16] = {0.0, 0.0, 1.0, 0.85, 1.0, 1.0, 0.0, 0.85, 1.0, 0.0, 0.0, 0.85, 0.0, 1.0, 0.0, 0.85};
+    CGColorSpaceRef colorSpaceHex = CGColorSpaceCreateDeviceRGB();
+    //    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 2);
+    CGGradientRef gradientHex = CGGradientCreateWithColorComponents(colorSpaceHex, componentsHex, locationsHex, 4);
+    
+    CGPoint startPointHex = CGPointMake(0.0, 75.0);
+    CGPoint endPointHex = CGPointMake(0.0, bounds.size.height - 75.0);
+    CGContextDrawLinearGradient(context, gradientHex, startPointHex, endPointHex, 0);
+    
+    CGGradientRelease(gradientHex);
+    CGColorSpaceRelease(colorSpaceHex);
+    CGContextRestoreGState(context);
+    
 }
 
 
