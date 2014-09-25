@@ -10,7 +10,19 @@
 //#import "BNRImage.h"
 
 
+@interface BNRHypnosisView()
+
+@property (strong, nonatomic) UIColor *circleColor;
+
+@end
+
 @implementation BNRHypnosisView
+
+- (void)setCircleColor:(UIColor *)circleColor
+{
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -18,9 +30,24 @@
     if (self) {
         // Initialization code.  All BNRHypnosisViews start with a clear background color
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     
     return self;
+}
+
+// When a finger touches the screen
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+//    NSLog(@"%@ was touched", self);
+    
+    // Get 3 random number between 0 and 1
+    float red = (arc4random() % 100) / 100.0;
+    float green = (arc4random() % 100) / 100.0;
+    float blue = (arc4random() % 100) / 100.0;
+    
+    UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    self.circleColor = randomColor;
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -58,7 +85,8 @@
     path.lineWidth = 2;
     
     // Configure the drawing color to light gray
-    [[UIColor lightGrayColor] setStroke];
+//    [[UIColor lightGrayColor] setStroke];
+    [self.circleColor setStroke];
     
     // Draw the line
     [path stroke];
@@ -68,7 +96,6 @@
     //
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
-//    CGContextSetShadow(context, CGSizeMake(4,7), 3);
     CGColorRef shadowColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.9].CGColor;
     CGContextSetShadowWithColor(context, CGSizeMake(4,7), 3, shadowColor);
     
@@ -87,7 +114,6 @@
     //
     // Gradient section
     //
-    //    CGContextRef context = UIGraphicsGetCurrentContext();
     context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     
@@ -119,20 +145,14 @@
     
     [triangle closePath];
     
-//    [triangle stroke];
-    
     // Clip the drawing area to just the defined triangle
     [triangle addClip];
    
-//    CGFloat locations[2] = {0.0, 1.0};
     CGFloat locations[4] = {0.0, 0.33, 0.66, 0.88};
     
     // The fourth and last parameters set the opaqueness/transparency of the colors
-//    CGFloat components[8] = {0.0, 1.0, 0.0, 0.75, 1.0, 1.0, 0.0, 0.75};
-//    CGFloat components[12] = {0.0, 1.0, 0.0, 0.80, 1.0, 1.0, 0.0, 0.80, 1.0, 0.0, 0.0, 0.80};
     CGFloat components[16] = {0.0, 1.0, 0.0, 0.75, 1.0, 1.0, 0.0, 0.75, 1.0, 0.0, 0.0, 0.75, 0.0, 0.0, 1.0, 0.75};
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-//    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 2);
     CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 4);
 
     CGPoint startPoint = CGPointMake(0.0, 75.0);
@@ -194,10 +214,21 @@
     CGFloat locationsHex[4] = {0.10, 0.20, 0.30, 0.40};
     
     // The fourth and last parameters set the opaqueness/transparency of the colors
-    CGFloat componentsHex[16] = {0.0, 0.0, 1.0, 0.85, 1.0, 1.0, 0.0, 0.85, 1.0, 0.0, 0.0, 0.85, 0.0, 1.0, 0.0, 0.85};
+    // We will set the hex colors to random also using the values from the circleColor
+    
+//    CGFloat componentsHex[16] = {0.0, 0.0, 1.0, 0.85, 1.0, 1.0, 0.0, 0.85, 1.0, 0.0, 0.0, 0.85, 0.0, 1.0, 0.0, 0.85};
+    
+    // Create a color pointer so we can get to the elements in the UIColor circleColor
+    CGFloat *randomColorComponents = (CGFloat *)CGColorGetComponents([self.circleColor CGColor]);
+
+    CGFloat componentsHex[16] = {
+        randomColorComponents[0], randomColorComponents[1], randomColorComponents[2], 0.85,
+        randomColorComponents[1], randomColorComponents[2], randomColorComponents[0], 0.85,
+        randomColorComponents[2], randomColorComponents[0], randomColorComponents[1], 0.85,
+        randomColorComponents[0], randomColorComponents[2], randomColorComponents[1], 0.85};
+    
     CGColorSpaceRef colorSpaceHex = CGColorSpaceCreateDeviceRGB();
-    //    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 2);
-    CGGradientRef gradientHex = CGGradientCreateWithColorComponents(colorSpaceHex, (CGFloat *)&componentsHex, (CGFloat *)&locationsHex, 4);
+    CGGradientRef gradientHex = CGGradientCreateWithColorComponents(colorSpaceHex, componentsHex, locationsHex, 4);
     
     CGPoint startPointHex = CGPointMake(45.0, 0.0);
     CGPoint endPointHex = CGPointMake(275.0, 0.0);
