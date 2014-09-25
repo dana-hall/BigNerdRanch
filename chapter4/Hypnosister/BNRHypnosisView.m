@@ -197,11 +197,11 @@
     CGFloat componentsHex[16] = {0.0, 0.0, 1.0, 0.85, 1.0, 1.0, 0.0, 0.85, 1.0, 0.0, 0.0, 0.85, 0.0, 1.0, 0.0, 0.85};
     CGColorSpaceRef colorSpaceHex = CGColorSpaceCreateDeviceRGB();
     //    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, 2);
-    CGGradientRef gradientHex = CGGradientCreateWithColorComponents(colorSpaceHex, componentsHex, locationsHex, 4);
+    CGGradientRef gradientHex = CGGradientCreateWithColorComponents(colorSpaceHex, (CGFloat *)&componentsHex, (CGFloat *)&locationsHex, 4);
     
-    CGPoint startPointHex = CGPointMake(0.0, 75.0);
-    CGPoint endPointHex = CGPointMake(0.0, bounds.size.height - 75.0);
-    CGContextDrawLinearGradient(context, gradientHex, startPointHex, endPointHex, 0);
+    CGPoint startPointHex = CGPointMake(45.0, 0.0);
+    CGPoint endPointHex = CGPointMake(275.0, 0.0);
+    CGContextDrawLinearGradient(context, gradientHex, startPointHex, endPointHex, kCGGradientDrawsBeforeStartLocation |kCGGradientDrawsAfterEndLocation);
     
     CGGradientRelease(gradientHex);
     CGColorSpaceRelease(colorSpaceHex);
