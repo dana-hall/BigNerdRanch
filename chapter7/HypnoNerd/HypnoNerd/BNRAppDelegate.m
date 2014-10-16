@@ -24,6 +24,11 @@
     
     // Override point for customization after application launch.
     
+    // Needed for notifications
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
     BNRHypnosisViewController *hvc = [[BNRHypnosisViewController alloc] init];
     
     // This will get a pointer to an object that represents the app bundle
