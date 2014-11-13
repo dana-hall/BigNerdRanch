@@ -17,6 +17,7 @@
 		D60F19A719F86AB700F9E0E4 /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60F19A619F86AB700F9E0E4 /* BNRItemsViewController.m */; };
 		D622E71119FEE89300623987 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D622E71019FEE89300623987 /* BNRItem.m */; };
 		D622E71419FEE97C00623987 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D622E71319FEE97C00623987 /* BNRItemStore.m */; };
+		D6C0C6BE1A141A67001383C6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0C6BD1A141A67001383C6 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D622E71019FEE89300623987 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		D622E71219FEE97C00623987 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		D622E71319FEE97C00623987 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		D6C0C6BD1A141A67001383C6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				D60F198319F866F200F9E0E4 /* BNRAppDelegate.h */,
 				D60F19A519F86AB700F9E0E4 /* BNRItemsViewController.h */,
 				D60F19A619F86AB700F9E0E4 /* BNRItemsViewController.m */,
+				D6C0C6BD1A141A67001383C6 /* HeaderView.xib */,
 				D60F198419F866F200F9E0E4 /* BNRAppDelegate.m */,
 				D60F198619F866F200F9E0E4 /* BNRViewController.h */,
 				D60F198719F866F200F9E0E4 /* BNRViewController.m */,
@@ -217,6 +220,7 @@
 				D60F198B19F866F200F9E0E4 /* Main.storyboard in Resources */,
 				D60F199019F866F200F9E0E4 /* LaunchScreen.xib in Resources */,
 				D60F198D19F866F200F9E0E4 /* Images.xcassets in Resources */,
+				D6C0C6BE1A141A67001383C6 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
