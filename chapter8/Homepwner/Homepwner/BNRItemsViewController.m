@@ -18,6 +18,11 @@
 
 @implementation BNRItemsViewController
 
+// Chapter 9 - Bronze Challenge
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Remove";
+}
+
 - (UIView *)headerView
 {
     // If you have not load the headerView yet...
@@ -28,6 +33,11 @@
                                     options:nil];
     }
     return _headerView;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
 - (IBAction)addNewItem:(id)sender
@@ -87,6 +97,7 @@
 //        for (int i = 0; i < 5; i++) {
 //            [[BNRItemStore sharedStore] createItem];
 //        }
+         [[BNRItemStore sharedStore] createLastRow];
     }
     
     return self;

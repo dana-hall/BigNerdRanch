@@ -17,6 +17,7 @@
 }
 
 + (instancetype)randomItem;
++ (instancetype)lastRow;
 
 // No need to declare init?? Probably because it is in NSObject and declared somewhere in Foundation.h
 // same applies to description below

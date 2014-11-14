@@ -34,6 +34,11 @@
     return newItem;
 }
 
++ (instancetype)lastRow
+{
+    return [[self alloc] initWithItemName:@"No More Items!"];
+}
+
 - (instancetype)init
 {
     return [self initWithItemName:@"Item"];
