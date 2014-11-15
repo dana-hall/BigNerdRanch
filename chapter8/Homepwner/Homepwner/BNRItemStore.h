@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class BNRItem;
 
@@ -20,5 +21,8 @@
 - (BNRItem *) createLastRow;
 - (void)removeItem:(BNRItem *)item;
 - (void)moveItemAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
+- (BOOL)canMoveRowAtIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)canEditRowAtIndexPath:(NSIndexPath *)indexPath;
+- (NSIndexPath *) targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath;
 
 @end

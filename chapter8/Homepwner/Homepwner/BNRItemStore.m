@@ -53,8 +53,12 @@
 
 - (BNRItem *)createItem
 {
+    NSUInteger size = self.privateItems.count;
+    
     BNRItem *item = [BNRItem randomItem];
-    [self.privateItems addObject:item];
+    
+    [self.privateItems insertObject:item atIndex:size-1];
+//    [self.privateItems addObject:item];
     
     return item;
 }
@@ -72,11 +76,49 @@
     [self.privateItems removeObjectIdenticalTo:item];
 }
 
+- (BOOL)canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == self.privateItems.count-1) // Don't move the last row
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (BOOL)canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == self.privateItems.count-1) // Don't edit the last row
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (NSIndexPath *) targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+      if (sourceIndexPath.row != proposedDestinationIndexPath.row) {
+          NSInteger row = 0;
+          if (sourceIndexPath.row < proposedDestinationIndexPath.row) {
+              row = self.privateItems.count - 2;
+          }
+          return [NSIndexPath indexPathForRow:row inSection:sourceIndexPath.section];
+      }
+
+    return proposedDestinationIndexPath;
+}
+
 - (void)moveItemAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
     if (fromIndex == toIndex) {
         return;
     }
+
+    if (toIndex >= self.privateItems.count-1) {
+        return;
+    }
+
     // Get pointer to object being moved so you can re-insert it
     BNRItem *item = self.privateItems[fromIndex];
     
@@ -87,6 +129,7 @@
     [self.privateItems insertObject:item atIndex:toIndex];
     
 }
+
 
             
 @end

@@ -40,6 +40,25 @@
     [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
+// Prevent moving the last row
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[BNRItemStore sharedStore] canMoveRowAtIndexPath:indexPath];
+}
+
+// Prevent editing the last row
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[BNRItemStore sharedStore] canEditRowAtIndexPath:indexPath];
+}
+
+// Prevent reordering past the last row
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+        return [[BNRItemStore sharedStore] targetIndexPathForMoveFromRowAtIndexPath:sourceIndexPath
+                                                                toProposedIndexPath:proposedDestinationIndexPath];
+}
+
 - (IBAction)addNewItem:(id)sender
 {
     // Make a new index path for the 0th section, last row
