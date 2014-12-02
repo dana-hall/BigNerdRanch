@@ -15,6 +15,8 @@
 		D60F199019F866F200F9E0E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60F198E19F866F200F9E0E4 /* LaunchScreen.xib */; };
 		D60F199C19F866F300F9E0E4 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D60F199B19F866F300F9E0E4 /* HomepwnerTests.m */; };
 		D60F19A719F86AB700F9E0E4 /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60F19A619F86AB700F9E0E4 /* BNRItemsViewController.m */; };
+		D6128B261A2D784500704B57 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6128B241A2D784500704B57 /* BNRDetailViewController.m */; };
+		D6128B271A2D784500704B57 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6128B251A2D784500704B57 /* BNRDetailViewController.xib */; };
 		D622E71119FEE89300623987 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D622E71019FEE89300623987 /* BNRItem.m */; };
 		D622E71419FEE97C00623987 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D622E71319FEE97C00623987 /* BNRItemStore.m */; };
 		D6C0C6BE1A141A67001383C6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0C6BD1A141A67001383C6 /* HeaderView.xib */; };
@@ -46,6 +48,9 @@
 		D60F199B19F866F300F9E0E4 /* HomepwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerTests.m; sourceTree = "<group>"; };
 		D60F19A519F86AB700F9E0E4 /* BNRItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemsViewController.h; sourceTree = "<group>"; };
 		D60F19A619F86AB700F9E0E4 /* BNRItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemsViewController.m; sourceTree = "<group>"; };
+		D6128B231A2D784500704B57 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
+		D6128B241A2D784500704B57 /* BNRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
+		D6128B251A2D784500704B57 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
 		D622E70F19FEE89300623987 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		D622E71019FEE89300623987 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		D622E71219FEE97C00623987 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 				D60F19A619F86AB700F9E0E4 /* BNRItemsViewController.m */,
 				D6C0C6BD1A141A67001383C6 /* HeaderView.xib */,
 				D60F198419F866F200F9E0E4 /* BNRAppDelegate.m */,
+				D6128B231A2D784500704B57 /* BNRDetailViewController.h */,
+				D6128B241A2D784500704B57 /* BNRDetailViewController.m */,
+				D6128B251A2D784500704B57 /* BNRDetailViewController.xib */,
 				D60F198619F866F200F9E0E4 /* BNRViewController.h */,
 				D60F198719F866F200F9E0E4 /* BNRViewController.m */,
 				D60F198919F866F200F9E0E4 /* Main.storyboard */,
@@ -221,6 +229,7 @@
 				D60F199019F866F200F9E0E4 /* LaunchScreen.xib in Resources */,
 				D60F198D19F866F200F9E0E4 /* Images.xcassets in Resources */,
 				D6C0C6BE1A141A67001383C6 /* HeaderView.xib in Resources */,
+				D6128B271A2D784500704B57 /* BNRDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +250,7 @@
 				D60F198819F866F200F9E0E4 /* BNRViewController.m in Sources */,
 				D60F198519F866F200F9E0E4 /* BNRAppDelegate.m in Sources */,
 				D622E71119FEE89300623987 /* BNRItem.m in Sources */,
+				D6128B261A2D784500704B57 /* BNRDetailViewController.m in Sources */,
 				D60F19A719F86AB700F9E0E4 /* BNRItemsViewController.m in Sources */,
 				D60F198219F866F200F9E0E4 /* main.m in Sources */,
 				D622E71419FEE97C00623987 /* BNRItemStore.m in Sources */,
