@@ -7,6 +7,7 @@
 //
 
 #import "BNRDetailViewController.h"
+#import "BNRChangeDateViewController.h"
 #import "BNRItem.h"
 
 @interface BNRDetailViewController ()
@@ -15,10 +16,25 @@
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *dateButton;
 
 @end
 
 @implementation BNRDetailViewController
+
+- (IBAction)changeDateClickHandler:(id)sender {
+
+    BNRChangeDateViewController *changeDateViewController = [[BNRChangeDateViewController alloc] init];
+    
+//    NSLog(@"%@", _dateLabel.text);
+    
+    // Set view item pointer to self item
+    changeDateViewController.item = self.item;
+    
+    // Push it onto the top of the navigation controller's stack
+    [self.navigationController pushViewController:changeDateViewController animated:YES];
+
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -56,8 +72,7 @@
     
 //    item.valueInDollars = [self.valueField.text intValue];
     NSString *valueInDollarsString = [self.valueField.text substringWithRange:NSMakeRange(1,self.valueField.text.length-1)];
-    item.valueInDollars = [valueInDollarsString intValue];
-
+    item.valueInDollars = [valueInDollarsString intValue];    
 }
 
 - (void)setItem:(BNRItem *)item

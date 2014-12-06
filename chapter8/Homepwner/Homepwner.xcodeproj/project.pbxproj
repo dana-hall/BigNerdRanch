@@ -20,6 +20,8 @@
 		D622E71119FEE89300623987 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D622E71019FEE89300623987 /* BNRItem.m */; };
 		D622E71419FEE97C00623987 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D622E71319FEE97C00623987 /* BNRItemStore.m */; };
 		D6C0C6BE1A141A67001383C6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0C6BD1A141A67001383C6 /* HeaderView.xib */; };
+		D6EF7B7A1A32798B0051A771 /* BNRChangeDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EF7B781A32798B0051A771 /* BNRChangeDateViewController.m */; };
+		D6EF7B7B1A32798B0051A771 /* BNRChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6EF7B791A32798B0051A771 /* BNRChangeDateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		D622E71219FEE97C00623987 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		D622E71319FEE97C00623987 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
 		D6C0C6BD1A141A67001383C6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		D6EF7B771A32798B0051A771 /* BNRChangeDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRChangeDateViewController.h; sourceTree = "<group>"; };
+		D6EF7B781A32798B0051A771 /* BNRChangeDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRChangeDateViewController.m; sourceTree = "<group>"; };
+		D6EF7B791A32798B0051A771 /* BNRChangeDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRChangeDateViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,9 @@
 				D60F198419F866F200F9E0E4 /* BNRAppDelegate.m */,
 				D6128B231A2D784500704B57 /* BNRDetailViewController.h */,
 				D6128B241A2D784500704B57 /* BNRDetailViewController.m */,
+				D6EF7B771A32798B0051A771 /* BNRChangeDateViewController.h */,
+				D6EF7B781A32798B0051A771 /* BNRChangeDateViewController.m */,
+				D6EF7B791A32798B0051A771 /* BNRChangeDateViewController.xib */,
 				D6128B251A2D784500704B57 /* BNRDetailViewController.xib */,
 				D60F198619F866F200F9E0E4 /* BNRViewController.h */,
 				D60F198719F866F200F9E0E4 /* BNRViewController.m */,
@@ -228,6 +236,7 @@
 				D60F198B19F866F200F9E0E4 /* Main.storyboard in Resources */,
 				D60F199019F866F200F9E0E4 /* LaunchScreen.xib in Resources */,
 				D60F198D19F866F200F9E0E4 /* Images.xcassets in Resources */,
+				D6EF7B7B1A32798B0051A771 /* BNRChangeDateViewController.xib in Resources */,
 				D6C0C6BE1A141A67001383C6 /* HeaderView.xib in Resources */,
 				D6128B271A2D784500704B57 /* BNRDetailViewController.xib in Resources */,
 			);
@@ -252,6 +261,7 @@
 				D622E71119FEE89300623987 /* BNRItem.m in Sources */,
 				D6128B261A2D784500704B57 /* BNRDetailViewController.m in Sources */,
 				D60F19A719F86AB700F9E0E4 /* BNRItemsViewController.m in Sources */,
+				D6EF7B7A1A32798B0051A771 /* BNRChangeDateViewController.m in Sources */,
 				D60F198219F866F200F9E0E4 /* main.m in Sources */,
 				D622E71419FEE97C00623987 /* BNRItemStore.m in Sources */,
 			);

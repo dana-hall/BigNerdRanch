@@ -108,6 +108,11 @@
     return _valueInDollars;
 }
 
+- (void)setDateCreated:(NSDate *)dc
+{
+    _dateCreated = dc;
+}
+
 - (NSDate *)dateCreated
 {
     return _dateCreated;

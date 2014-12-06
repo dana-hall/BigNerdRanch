@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
+                <outlet property="dateButton" destination="gZD-l3-K7r" id="9Se-K0-MhY"/>
                 <outlet property="dateLabel" destination="QyC-dc-yFa" id="cNb-OR-B6f"/>
                 <outlet property="nameField" destination="YJV-Ou-8LE" id="M0k-9f-kM6"/>
                 <outlet property="serialNumberField" destination="9kg-Uf-I4I" id="qwy-Re-E4A"/>
@@ -66,6 +67,15 @@
                         <outlet property="delegate" destination="-1" id="bX9-bR-nNw"/>
                     </connections>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-l3-K7r">
+                    <rect key="frame" x="107" y="253" width="107" height="30"/>
+                    <state key="normal" title="Change Date">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="changeDateClickHandler:" destination="-1" eventType="touchUpInside" id="USf-o1-s1i"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
