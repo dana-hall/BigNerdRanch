@@ -8,8 +8,10 @@
             <connections>
                 <outlet property="dateButton" destination="gZD-l3-K7r" id="9Se-K0-MhY"/>
                 <outlet property="dateLabel" destination="QyC-dc-yFa" id="cNb-OR-B6f"/>
+                <outlet property="imageView" destination="MWc-Re-mef" id="yHK-wD-kT4"/>
                 <outlet property="nameField" destination="YJV-Ou-8LE" id="M0k-9f-kM6"/>
                 <outlet property="serialNumberField" destination="9kg-Uf-I4I" id="qwy-Re-E4A"/>
+                <outlet property="toolbar" destination="u8e-P9-e21" id="K7T-Y5-1Jw"/>
                 <outlet property="valueField" destination="3Ds-s4-flq" id="ErD-1L-QUe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -76,6 +78,19 @@
                         <action selector="changeDateClickHandler:" destination="-1" eventType="touchUpInside" id="USf-o1-s1i"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWc-Re-mef">
+                    <rect key="frame" x="44" y="303" width="237" height="201"/>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8e-P9-e21">
+                    <rect key="frame" x="8" y="516" width="304" height="44"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="KkP-OL-4BL">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="jIo-p6-SPW"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -83,6 +98,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="-71" y="28"/>
         </view>
     </objects>
 </document>
