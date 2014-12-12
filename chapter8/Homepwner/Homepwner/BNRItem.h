@@ -14,7 +14,11 @@
     NSString *_serialNumber;
     int _valueInDollars;
     NSDate *_dateCreated;
+    NSString *_itemKey;
 }
+
+//@property (nonatomic, copy) NSString *itemKey;
+
 
 + (instancetype)randomItem;
 + (instancetype)lastRow;
@@ -39,6 +43,9 @@
 
 - (void)setDateCreated:(NSDate *)dc;
 - (NSDate *)dateCreated;
+
+- (void)setItemKey:(NSString *)ik;
+- (NSString *)itemKey;
 
 // Not needed ???
 //-(NSString *)description;

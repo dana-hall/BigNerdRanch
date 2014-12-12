@@ -62,6 +62,15 @@
         self.itemName = name;
         self.serialNumber = sNumber;
         self.valueInDollars = value;
+        
+        // Create an NSUUID object - and get it's string representation
+        NSUUID *uuid = [[NSUUID alloc] init];
+        NSString *key = uuid.UUIDString;
+//        NSString *key = [uuid UUIDString];
+//        _itemKey = key;
+        
+        // Dana - to use this you will need to create getter/setter in BNRItem.h
+        self.itemKey = key;
     }
     return self;
 }
@@ -116,6 +125,16 @@
 - (NSDate *)dateCreated
 {
     return _dateCreated;
+}
+
+- (void)setItemKey:(NSString *)ik
+{
+    _itemKey = ik;
+}
+
+- (NSString *)itemKey
+{
+    return _itemKey;
 }
 
 -(NSString *)description
