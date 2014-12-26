@@ -25,6 +25,15 @@
 
 @implementation BNRDetailViewController
 
+// Silver Challenge
+- (IBAction)removePicture:(id)sender {
+    self.imageView.image = nil;
+    
+    // Remove the image in the BNRImageStore for this key
+    [[BNRImageStore sharedStore] deleteImageForKey:self.item.itemKey];
+
+}
+
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
 }
@@ -32,7 +41,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // Get picked image from info dictionary
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
+//    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = info[UIImagePickerControllerEditedImage];          // Bronze Challenge
     
     // Store the image in the BNRImageStore for this key
     [[BNRImageStore sharedStore] setImage:image forKey:self.item.itemKey];
@@ -54,6 +64,7 @@
     else {
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+    imagePicker.allowsEditing = YES;        // Bronze Challenge
     imagePicker.delegate = self;
     
     // Place image picker on the screen
@@ -118,7 +129,8 @@
     
 //    item.valueInDollars = [self.valueField.text intValue];
     NSString *valueInDollarsString = [self.valueField.text substringWithRange:NSMakeRange(1,self.valueField.text.length-1)];
-    item.valueInDollars = [valueInDollarsString intValue];    
+    item.valueInDollars = [valueInDollarsString intValue];
+    
 }
 
 - (void)setItem:(BNRItem *)item

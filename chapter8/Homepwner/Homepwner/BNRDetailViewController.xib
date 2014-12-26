@@ -89,6 +89,18 @@
                                 <action selector="takePicture:" destination="-1" id="jIo-p6-SPW"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" id="u7K-TL-1s0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sXy-0Z-SrV">
+                                <rect key="frame" x="51" y="7" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removePicture:" destination="-1" eventType="touchDown" id="bUb-x7-K1x"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </items>
                 </toolbar>
             </subviews>
@@ -101,7 +113,7 @@
             <connections>
                 <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="Nlp-Hz-R1V"/>
             </connections>
-            <point key="canvasLocation" x="-71" y="28"/>
+            <point key="canvasLocation" x="-374" y="4"/>
         </view>
     </objects>
 </document>
