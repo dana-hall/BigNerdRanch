@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
+                <outlet property="crossHair" destination="gRg-eU-RVG" id="06x-oR-kXy"/>
+                <outlet property="crossHairButton" destination="Q1A-az-PDX" id="swc-9O-lNU"/>
                 <outlet property="dateButton" destination="gZD-l3-K7r" id="9Se-K0-MhY"/>
                 <outlet property="dateLabel" destination="QyC-dc-yFa" id="cNb-OR-B6f"/>
                 <outlet property="imageView" destination="MWc-Re-mef" id="yHK-wD-kT4"/>
@@ -101,8 +103,21 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem style="plain" id="BJU-FN-a2S">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q1A-az-PDX">
+                                <rect key="frame" x="98" y="7" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cross Hair"/>
+                                <connections>
+                                    <action selector="toggleCrossHair:" destination="-1" eventType="touchDown" id="ELG-bf-QkN"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </items>
                 </toolbar>
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Crosshairs.png" highlightedImage="Crosshairs.png" translatesAutoresizingMaskIntoConstraints="NO" id="gRg-eU-RVG">
+                    <rect key="frame" x="40" y="303" width="240" height="201"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -113,7 +128,10 @@
             <connections>
                 <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="Nlp-Hz-R1V"/>
             </connections>
-            <point key="canvasLocation" x="-374" y="4"/>
+            <point key="canvasLocation" x="-712" y="109"/>
         </view>
     </objects>
+    <resources>
+        <image name="Crosshairs.png" width="256" height="256"/>
+    </resources>
 </document>

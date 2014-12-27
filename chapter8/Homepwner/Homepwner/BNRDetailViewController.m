@@ -20,10 +20,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIImageView *crossHair;            // Gold Challenge
+@property (weak, nonatomic) IBOutlet UIButton *crossHairButton;         // Gold Challenge
 
 @end
 
 @implementation BNRDetailViewController
+
+// Gold Challenge
+- (IBAction)toggleCrossHair:(id)sender {
+    if(self.crossHair.hidden == YES) {
+        self.crossHair.hidden = NO;
+    }
+    else
+    {
+        self.crossHair.hidden = YES;
+    }
+}
 
 // Silver Challenge
 - (IBAction)removePicture:(id)sender {
@@ -31,6 +44,8 @@
     
     // Remove the image in the BNRImageStore for this key
     [[BNRImageStore sharedStore] deleteImageForKey:self.item.itemKey];
+    
+    self.crossHair.hidden = YES;        // Gold Challenge
 
 }
 
@@ -64,6 +79,22 @@
     else {
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+
+    //
+    // Gold Challenge
+    //
+    // creating overlayView
+//    UIView* overlayView = [[UIView alloc] initWithFrame:imagePicker.view.frame];
+//    
+//    // letting png transparency be
+//    overlayView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Crosshair.png"]];
+//    [overlayView.layer setOpaque:NO];
+//    overlayView.opaque = NO;
+//    
+//    imagePicker.showsCameraControls = NO;
+//    imagePicker.cameraOverlayView = overlayView;
+
+    
     imagePicker.allowsEditing = YES;        // Bronze Challenge
     imagePicker.delegate = self;
     
@@ -113,6 +144,8 @@
     
     // Use that image to put on the screen in the imageView
     self.imageView.image = imageToDisplay;
+    
+    self.crossHair.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
